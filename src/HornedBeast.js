@@ -18,11 +18,16 @@ class HornedBeast extends React.Component {
     });
   }
 
+  handleBeastClick = () => {
+    this.props.handleOpenModal(this.props.title, this.props.image_url, this.props.description)
+  
+  }
+
   render() {
     return (
       <>
         <Card style={{ width: '18rem' }}>
-          <Card.Img variant="top" src={this.props.image_url} alt={this.props.description} />
+          <Card.Img onClick={this.handleBeastClick} variant="top" src={this.props.image_url} alt={this.props.description} />
           <Card.Body>
             <Card.Title>{this.props.title}</Card.Title>
             <Card.Text>{this.props.description}</Card.Text>
@@ -30,12 +35,6 @@ class HornedBeast extends React.Component {
             <Button onClick={this.handleFav} variant="outline-danger">Click to Favorite</Button>
           </Card.Body>
         </Card>
-
-
-        {/* <h2>{this.props.title}</h2>
-        <img src={this.props.image_url} alt={this.props.description} title={this.props.title}/>
-        <p>{this.props.description}</p>
-        <p onClick={this.handleFav}>Favorite!</p> */}
       </>
     )
   }
