@@ -6,6 +6,7 @@ class Main extends React.Component {
     return (
       <>
         <main>
+          
           {this.props.data.map((hornedbeast) => {
             return (
             <HornedBeast 
